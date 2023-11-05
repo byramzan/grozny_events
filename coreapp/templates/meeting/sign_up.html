@@ -1,0 +1,24 @@
+{% extends "meeting/base_auth.html" %}
+{% load bootstrap4 %}
+{% block title %}Регистрация{% endblock  %}
+
+{% block heading %}Регистрация{% endblock  %}
+
+{% block content %}
+<form action="" method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    {% bootstrap_form user_form %}
+    {% bootstrap_form meeting_form %}
+
+    <button type="submit" class='btn btn-black btn-block'>Зарегистрироваться</button>
+</form>
+
+    <div class="text-center mt-3">
+        <a href="{% url 'meeting_sign_in' %}"> У меня уже есть аккаунт.</a>
+    </div>
+    
+{% endblock  %}
+    
+    
+    
+

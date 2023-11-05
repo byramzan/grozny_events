@@ -1,0 +1,19 @@
+{% extends "meeting/base_auth.html" %}
+{% load bootstrap4 %}
+
+{% block title %}Войти{% endblock  %}
+
+{% block heading %}Войти{% endblock  %}
+
+{% block content %}
+<form action="" method="post">
+    {% csrf_token %} 
+    {% bootstrap_form form %}
+    <button type="submit" class='btn btn-black btn-block'> Войти</button>
+
+    <div class="text-center mt-3">
+        <a href="{% url 'meeting_sign_up' %}">У меня новое мероприятие.</a>
+    </div>
+</form>
+{% endblock  %}
+    

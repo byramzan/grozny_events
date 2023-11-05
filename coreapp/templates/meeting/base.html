@@ -1,0 +1,27 @@
+{% extends "meeting/layout.html" %}
+
+{% block sidebar %}
+<div class="text-center mt-4">
+    <img src="{{ request.user.meeting.logo.url }}" class="rounded-circle" width="80" height="80" alt="">
+    <br><br>
+    <h5>{{ request.user.get_full_name }}</h5>
+    <h5>{{ request.user.meeting.name }}</h5>
+</div>
+<hr>
+
+<div class="list-group">
+    <span class="text-uppercase text-center">Панель Управления</span>
+    <a href="{% url "meeting_order" %}" class="list-group-item">Участие</a>
+    <a href="{% url "meeting_report" %}" class="list-group-item">Жалобы</a>
+    <a href="{% url "meeting_events" %}" class="list-group-item">События</a>
+    <span class="text-uppercase text-center" class="list-group-item">Профиль</span>
+    <a href="{% url "meeting_account" %}" class="list-group-item">Аккаунт</a>
+
+</div>
+
+<div class="text-center my-3 mx-3">
+    <a href="{% url 'meeting_sign_out' %}" class="btn btn-warning btn-block btn-moy">Выйти</a>
+</div>
+
+<hr>
+{% endblock  %}
